@@ -4,8 +4,7 @@
 #include "Debug.h"
 #include "Window.h"
 
-class Game
-{
+class Game {
 public:
 
 	// The main game event

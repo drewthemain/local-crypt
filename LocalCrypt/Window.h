@@ -3,8 +3,7 @@
 #include <SDL.h>
 #include "Debug.h"
 
-class Window
-{
+class Window {
 public:
 	// Reference to the game window
 	static SDL_Window* window;

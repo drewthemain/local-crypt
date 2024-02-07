@@ -10,8 +10,7 @@ int main(int argc, char* args[]) {
 	game = new Game();
 	game->Init("CryptLocal", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 640, false);
 
-	while (Game::isRunning)
-	{
+	while (Game::isRunning) {
 		game->HandleEvents();
 		game->Update();
 		game->Render();

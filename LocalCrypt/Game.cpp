@@ -4,12 +4,10 @@
 SDL_Event Game::event;
 bool Game::isRunning = false;
 
-Game::Game()
-{
+Game::Game() {
 }
 
-Game::~Game()
-{
+Game::~Game() {
 }
 
 void Game::Init(const char* title, int xPos, int yPos, int width, int height, bool fullScreen) {
@@ -19,8 +17,7 @@ void Game::Init(const char* title, int xPos, int yPos, int width, int height, bo
 
 		window = new Window();
 
-		if (window->Init(title, xPos, yPos, width, height, fullScreen))
-		{
+		if (window->Init(title, xPos, yPos, width, height, fullScreen)) {
 			isRunning = true;
 		}
 	}
@@ -30,12 +27,10 @@ void Game::Init(const char* title, int xPos, int yPos, int width, int height, bo
 /// Handles user input
 /// Will be delegated later to external controllers
 /// </summary>
-void Game::HandleEvents()
-{
+void Game::HandleEvents() {
 	SDL_PollEvent(&event);
 
-	if (event.type == SDL_KEYUP)
-	{
+	if (event.type == SDL_KEYUP) {
 		switch (event.key.keysym.sym)
 		{
 			case SDLK_ESCAPE:
@@ -44,8 +39,7 @@ void Game::HandleEvents()
 		}
 	}
 
-	switch (event.type)
-	{
+	switch (event.type) {
 		case SDL_QUIT:
 			isRunning = false;
 			break;
@@ -54,21 +48,18 @@ void Game::HandleEvents()
 	}
 }
 
-void Game::Update()
-{
+void Game::Update() {
 	// TODO: UPDATE
 }
 
-void Game::Render()
-{
+void Game::Render() {
 	// TODO: RENDER
 }
 
 /// <summary>
 /// Scrubs the window and properly exits SDL
 /// </summary>
-void Game::Clean()
-{
+void Game::Clean() {
 	window->Clean();
 	SDL_Quit();
 
